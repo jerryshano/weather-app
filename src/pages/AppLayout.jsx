@@ -1,46 +1,55 @@
-import styled from "styled-components";
+import { FlexHeader } from "../styles/FlexHeader.styles";
+import { FlexMain } from "../styles/FlexMain.styles";
+import { FlexSideBar } from "../styles/FlexSideBar.styles";
+import { FlexContent } from "../styles/FlexContent.styles";
+import { FlexList } from "../styles/FlexList.styles";
+import { ListItem } from "../styles/ListItem.styles";
+import { LgImgDiv } from "../styles/LgImgDiv.styles";
+import { SmImgContainer } from "../styles/SmImgContainer.styles";
+import { SmImgDiv } from "../styles/SmImgDiv.styles";
+import logo from "../assests/weather.png";
 
-const FlexHeader = styled.div`
-  display: flex;
-  border: 2px solid darkgreen;
-  height: 100px;
-`;
-const FlexMain = styled.div`
-  display: flex;
-  min-height: calc(100vh - 100px);
-`;
-const FlexSideBar = styled.div`
-  border: 1px solid purple;
-  display: flex;
-  flex-grow: 1;
-`;
-const FlexContent = styled.div`
-  border: 1px solid darkblue;
-  display: flex;
-  flex-grow: 4;
-`;
-const FlexList = styled.div`
-  border: 1px solid darkblue;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2;
-`;
-const ListItem = styled.div`
-  border: 1px solid darkblue;
-  flex-grow: 1;
-`;
 function AppLayout() {
   return (
     <>
       <FlexHeader>
-        <span>header</span>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <img style={{ height: "50px", width: "50px" }} src={logo} alt="" />
+          <span>weather app</span>
+        </div>
+        <div
+          style={{
+            flexGrow: "3",
+            flexBasis: "70px",
+            textAlign: "center",
+            margin: "auto",
+          }}
+        >
+          Here you can find an excellent weather app
+        </div>
+        <div style={{ flexGrow: "3", flexBasis: "70px", margin: "auto" }}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quia
+          cupiditate quod, cumque dolorum a veniam praesentium cum rem.
+          Nesciunt?
+        </div>
       </FlexHeader>
       <FlexMain>
         <FlexSideBar>
           <span>sidebar</span>
         </FlexSideBar>
         <FlexContent>
-          <span>content area</span>
+          <LgImgDiv>lg</LgImgDiv>
+          <SmImgContainer>
+            <SmImgDiv>top l</SmImgDiv>
+            <SmImgDiv>bottom right</SmImgDiv>
+            <SmImgDiv>f</SmImgDiv>
+            <SmImgDiv>sm</SmImgDiv>
+          </SmImgContainer>
         </FlexContent>
         <FlexList>
           <ListItem>list item</ListItem>
