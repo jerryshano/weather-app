@@ -2,6 +2,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./pages/AppLayout";
+import GlobalStyles from "./styles/Globalstyles";
 
 function App() {
   // const [pictures, setPictures] = useState([]);
@@ -45,6 +46,7 @@ function App() {
   // };
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <Routes>
         <Route index element={<AppLayout />}></Route>
       </Routes>

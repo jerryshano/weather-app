@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SmImgContainer = styled.div`
+export const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 120px 120px;
