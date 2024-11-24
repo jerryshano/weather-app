@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./pages/AppLayout";
 import GlobalStyles from "./styles/Globalstyles";
+import CityView from "./components/CityView";
 
 function App() {
   // const [pictures, setPictures] = useState([]);
@@ -49,6 +50,7 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route index element={<AppLayout />}></Route>
+        <Route path="cityview" element={<CityView />} />
       </Routes>
     </BrowserRouter>
   );

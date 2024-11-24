@@ -4,6 +4,6 @@ export const StyledContent = styled.div`
   border: 1px solid darkblue;
   display: flex;
   flex-direction: column;
-  flex-grow: 4;
+  flex-grow: 3;
   padding: 10px;
 `;
