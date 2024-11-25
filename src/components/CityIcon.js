@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
-
-function CityIcon() {
+import { StyledCityIcon } from "../styles/CityIcon.styles";
+function CityIcon({ weather }) {
   return (
-    <div style={{ border: "1px solid purple" }}>
-      <Link to="/cityview">Cityview</Link>
-    </div>
+    <Link to="/cityview" style={{ textDecoration: "none", color: "inherit" }}>
+      <StyledCityIcon>
+        <div>🇮🇨</div>
+        <div>
+          {weather.country} {weather.location}
+        </div>
+        <div>{weather.temperature}°C</div>
+        <div>→</div>
+      </StyledCityIcon>
+    </Link>
   );
 }
 

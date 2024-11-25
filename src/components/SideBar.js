@@ -1,9 +1,9 @@
 import CityIcon from "./CityIcon";
 
-function SideBar() {
+function SideBar({ weather }) {
   return (
     <div>
-      <CityIcon />
+      <CityIcon weather={weather} />
     </div>
   );
 }
