@@ -24,11 +24,13 @@ function Main() {
             country: data.sys.country,
             visibility: data.visibility,
             clouds: data.clouds.all,
-            weather: data.weather[0].main,
+            feelsLike: data.main.feels_like,
+            main: data.weather[0].main,
+            desc: data.weather[0].description,
           });
         console.log(data);
       } catch (err) {
-        console.log("oooooohh no!");
+        console.log("oooooohh no!", err);
       }
     };
     fetchAPI();

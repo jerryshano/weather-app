@@ -2,10 +2,11 @@ import { StyledContent } from "../styles/Content.styles";
 import { LgImg } from "../styles/LgImg.styles";
 import Grid from "./Grid";
 
-function Content() {
+function Content({ weather }) {
+  const { temperature } = weather;
   return (
     <StyledContent>
-      <LgImg>lg</LgImg>
+      <LgImg>{temperature}°C</LgImg>
       <Grid />
     </StyledContent>
   );
