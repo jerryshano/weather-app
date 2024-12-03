@@ -25,8 +25,9 @@ function Main() {
             visibility: data.visibility,
             clouds: data.clouds.all,
             feelsLike: data.main.feels_like,
-            main: data.weather[0].main,
             desc: data.weather[0].description,
+            icon: data.weather[0].icon,
+            main: data.weather[0].main,
           });
         console.log(data);
       } catch (err) {

@@ -1,12 +1,16 @@
 import { StyledContent } from "../styles/Content.styles";
-import { LgImg } from "../styles/LgImg.styles";
+import { StyledLgImg } from "../styles/LgImg.styles";
 import Grid from "./Grid";
+import LargeImage from "./LargeImage";
 
 function Content({ weather }) {
-  const { temperature } = weather;
+  const { temperature, icon } = weather;
   return (
     <StyledContent>
-      <LgImg>{temperature}°C</LgImg>
+      <StyledLgImg>
+        {temperature}°C
+        <LargeImage icon={icon} />
+      </StyledLgImg>
       <Grid />
     </StyledContent>
   );
