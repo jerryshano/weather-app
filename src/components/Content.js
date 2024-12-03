@@ -4,12 +4,16 @@ import Grid from "./Grid";
 import LargeImage from "./LargeImage";
 
 function Content({ weather }) {
-  const { temperature, icon } = weather;
+  const { temperature, icon, main, location } = weather;
   return (
     <StyledContent>
       <StyledLgImg>
-        {temperature}°C
-        <LargeImage icon={icon} />
+        <LargeImage
+          icon={icon}
+          temperature={temperature}
+          location={location}
+          main={main}
+        />
       </StyledLgImg>
       <Grid />
     </StyledContent>

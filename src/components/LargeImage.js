@@ -1,15 +1,12 @@
-function LargeImage({ icon }) {
+function LargeImage({ icon, temperature, main, location }) {
   return (
     <>
       <div>
-        <div>
-          <img
-            src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-            alt=""
-          />
-        </div>
-        <div>test</div>
+        <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
+        <div>{main}</div>
       </div>
+      <div>{temperature}°C</div>
+      <div>{location}</div>
     </>
   );
 }
