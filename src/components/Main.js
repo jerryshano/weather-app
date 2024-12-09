@@ -12,7 +12,7 @@ function Main() {
     const fetchAPI = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=76d0bcbd868226d9268c69f256948555`
+          `https://api.openweathermap.org/data/2.5/weather?zip=94088,us&units=metric&APPID=76d0bcbd868226d9268c69f256948555`
         );
         const data = await response.json();
         if (data)
@@ -25,6 +25,10 @@ function Main() {
             visibility: data.visibility,
             clouds: data.clouds.all,
             feelsLike: data.main.feels_like,
+            maxTemp: data.main.temp_max,
+            minTemp: data.main.temp_min,
+            sunset: data.sys.sunset,
+            timezone: data.timezone,
             desc: data.weather[0].description,
             icon: data.weather[0].icon,
             main: data.weather[0].main,

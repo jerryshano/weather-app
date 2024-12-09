@@ -8,10 +8,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: #FFB49A;
+  background-color: #7B7554;
   color: #17183B;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Roboto",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;

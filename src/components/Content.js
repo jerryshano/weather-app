@@ -4,7 +4,17 @@ import Grid from "./Grid";
 import LargeImage from "./LargeImage";
 
 function Content({ weather }) {
-  const { temperature, icon, main, location } = weather;
+  const {
+    timezone,
+    maxTemp,
+    minTemp,
+    temperature,
+    icon,
+    main,
+    location,
+    feelsLike,
+    sunset,
+  } = weather;
   return (
     <StyledContent>
       <StyledLgImg>
@@ -15,7 +25,13 @@ function Content({ weather }) {
           main={main}
         />
       </StyledLgImg>
-      <Grid />
+      <Grid
+        sunset={sunset}
+        timezone={timezone}
+        feelsLike={feelsLike}
+        minTemp={minTemp}
+        maxTemp={maxTemp}
+      />
     </StyledContent>
   );
 }

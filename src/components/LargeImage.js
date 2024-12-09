@@ -1,13 +1,15 @@
+import { FlexCont, Test } from "../styles/LgImg.styles";
+
 function LargeImage({ icon, temperature, main, location }) {
   return (
-    <>
-      <div>
+    <Test>
+      <FlexCont>
         <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
         <div>{main}</div>
-      </div>
-      <div>{temperature}°C</div>
+      </FlexCont>
+      <p>{temperature}°C</p>
       <div>{location}</div>
-    </>
+    </Test>
   );
 }
 
