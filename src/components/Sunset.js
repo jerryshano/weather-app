@@ -7,11 +7,9 @@ function timeConverter(UNIX_timestamp) {
   var time = hour + ":" + min;
   return time;
 }
-console.log(timeConverter(0));
 
 function Sunset({ timezone, sunset }) {
   const time = timeConverter(sunset);
-  console.log(time);
   return (
     <FlexCont>
       <div>Sunet</div>
