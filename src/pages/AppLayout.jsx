@@ -1,11 +1,11 @@
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-function AppLayout() {
+function AppLayout({ handleSearch, weather, search }) {
   return (
     <>
       <Header />
-      <Main />
+      <Main handleSearch={handleSearch} weather={weather} search={search} />
     </>
   );
 }
