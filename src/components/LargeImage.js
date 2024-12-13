@@ -1,6 +1,6 @@
 import { FlexCont, Test } from "../styles/LgImg.styles";
 
-function LargeImage({ icon, temperature, main, location }) {
+function LargeImage({ icon, temperature, main, location, pictures }) {
   return (
     <Test>
       <FlexCont>

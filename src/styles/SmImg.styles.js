@@ -5,7 +5,7 @@ export const StyledSmImg = styled.div`
   flex-grow: 1;
   & :nth-child(2) {
     font-size: 2rem;
-    color: #a11692;
+    color: blue;
   }
 `;
 

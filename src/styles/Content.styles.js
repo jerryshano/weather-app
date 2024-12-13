@@ -6,4 +6,5 @@ export const StyledContent = styled.div`
   flex-direction: column;
   flex-grow: 3;
   padding: 10px;
+  color: lightblue;
 `;

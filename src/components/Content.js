@@ -3,7 +3,7 @@ import { StyledLgImg } from "../styles/LgImg.styles";
 import Grid from "./Grid";
 import LargeImage from "./LargeImage";
 
-function Content({ weather }) {
+function Content({ weather, pictures }) {
   const {
     timezone,
     maxTemp,
@@ -15,9 +15,12 @@ function Content({ weather }) {
     feelsLike,
     sunset,
   } = weather;
+
+  const { results } = pictures;
+  const les = results[1].urls.small;
   return (
     <StyledContent>
-      <StyledLgImg>
+      <StyledLgImg les={les}>
         <LargeImage
           icon={icon}
           temperature={temperature}
@@ -26,6 +29,7 @@ function Content({ weather }) {
         />
       </StyledLgImg>
       <Grid
+        pictures={pictures}
         sunset={sunset}
         timezone={timezone}
         feelsLike={feelsLike}
