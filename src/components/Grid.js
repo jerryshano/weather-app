@@ -5,19 +5,19 @@ import MaxTemp from "./MaxTemp";
 import MinTemp from "./MinTemp";
 import Sunset from "./Sunset";
 
-function Grid({ sunset, feelsLike, maxTemp, minTemp, timezone }) {
+function Grid({ pictures, sunset, feelsLike, maxTemp, minTemp, timezone }) {
   return (
     <StyledGrid>
-      <StyledSmImg>
+      <StyledSmImg pictures={pictures}>
         <FeelsLike feelsLike={feelsLike} />
       </StyledSmImg>
-      <StyledSmImg>
-        <MaxTemp minTemp={minTemp} maxTemp={maxTemp} />
+      <StyledSmImg pictures={pictures}>
+        <MaxTemp maxTemp={maxTemp} />
       </StyledSmImg>
-      <StyledSmImg>
+      <StyledSmImg pictures={pictures}>
         <MinTemp minTemp={minTemp} />
       </StyledSmImg>
-      <StyledSmImg>
+      <StyledSmImg pictures={pictures}>
         <Sunset timezone={timezone} sunset={sunset} />
       </StyledSmImg>
     </StyledGrid>

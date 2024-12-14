@@ -1,8 +1,8 @@
 import { FlexCont } from "../styles/SmImg.styles";
 
-function MinTemp({ minTemp }) {
+function MinTemp({ minTemp, pictures }) {
   return (
-    <FlexCont>
+    <FlexCont pictures={pictures}>
       <div>Min Temp</div>
       <div>{minTemp}°C</div>
     </FlexCont>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledLgImg = styled.div`
   border: 1px solid yellow;
   min-height: 250px;
-  background-image: url(${(props) => props.les});
+  background-image: url(${(props) => props.pictures});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

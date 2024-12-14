@@ -1,8 +1,8 @@
 import { FlexCont } from "../styles/SmImg.styles";
 
-function MaxTemp({ maxTemp }) {
+function MaxTemp({ maxTemp, pictures }) {
   return (
-    <FlexCont>
+    <FlexCont pictures={pictures}>
       <div>Max Temp</div>
       <div>{maxTemp}°C</div>
     </FlexCont>

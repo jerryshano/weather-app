@@ -8,6 +8,7 @@ import CityView from "./components/CityView";
 function App() {
   const [weather, setWeather] = useState([]);
   const [search, setSearch] = useState("");
+  const [pictures, setPictures] = useState([]);
 
   const handleSearch = (value) => {
     setSearch(value);
@@ -48,6 +49,29 @@ function App() {
     fetchAPI();
   }, [search]);
 
+  console.log(weather);
+  const { main } = weather;
+
+  useEffect(() => {
+    const fetchPics = async () => {
+      try {
+        const response = await fetch(
+          `https://api.unsplash.com/search/photos/?query=${main}&page=1&per_page=5&client_id=jtZrDriaHzgfjU77JCp_FSg0Xtqu65JUMeSTx49KiIQ`
+        );
+        const data = await response.json();
+        if (data) {
+          console.log(data.results[1].urls.small, "small");
+          setPictures(data.results[1].urls.small);
+        }
+      } catch (err) {
+        console.log("unsplash error jj");
+      }
+    };
+    fetchPics();
+  }, [main]);
+
+  console.log(pictures);
+
   return (
     <BrowserRouter>
       <GlobalStyles />
@@ -59,6 +83,7 @@ function App() {
               search={search}
               handleSearch={handleSearch}
               weather={weather}
+              pictures={pictures}
             />
           }
         ></Route>

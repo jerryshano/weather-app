@@ -8,10 +8,10 @@ function timeConverter(UNIX_timestamp) {
   return time;
 }
 
-function Sunset({ timezone, sunset }) {
+function Sunset({ pictures, timezone, sunset }) {
   const time = timeConverter(sunset);
   return (
-    <FlexCont>
+    <FlexCont pictures={pictures}>
       <div>Sunet</div>
       <div>{time}</div>
     </FlexCont>

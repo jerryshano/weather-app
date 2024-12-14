@@ -16,11 +16,9 @@ function Content({ weather, pictures }) {
     sunset,
   } = weather;
 
-  const { results } = pictures;
-  const les = results[1].urls.small;
   return (
     <StyledContent>
-      <StyledLgImg les={les}>
+      <StyledLgImg pictures={pictures}>
         <LargeImage
           icon={icon}
           temperature={temperature}

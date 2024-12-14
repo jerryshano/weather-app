@@ -1,8 +1,8 @@
 import { FlexCont } from "../styles/SmImg.styles";
 
-function FeelsLike({ feelsLike }) {
+function FeelsLike({ feelsLike, pictures }) {
   return (
-    <FlexCont>
+    <FlexCont pictures={pictures}>
       <div>Feels Like</div>
       <div>{feelsLike}°C</div>
     </FlexCont>
