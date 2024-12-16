@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { StyledCityIcon } from "../styles/CityIcon.styles";
-function CityIcon({ weather }) {
-  const { country, location, temperature } = weather;
+
+function CityIcon({ items, value }) {
+  console.log(value);
   return (
     <Link to="/cityview" style={{ textDecoration: "none", color: "inherit" }}>
       <StyledCityIcon>
         <div>🇮🇨</div>
         <div>
-          {country} {location}
+          {value[0]} {value[1]}
         </div>
-        <div>{temperature}°C</div>
+        <div>{value[2]}°C</div>
         <div>→</div>
       </StyledCityIcon>
     </Link>

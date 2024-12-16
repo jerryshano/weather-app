@@ -9,7 +9,12 @@ function App() {
   const [weather, setWeather] = useState([]);
   const [search, setSearch] = useState("");
   const [pictures, setPictures] = useState([]);
+  const [items, setItems] = useState([]);
 
+  const handleAdd = (item) => {
+    setItems([...items, item]);
+    console.log(items);
+  };
   const handleSearch = (value) => {
     setSearch(value);
   };
@@ -23,7 +28,8 @@ function App() {
           }&units=metric&APPID=76d0bcbd868226d9268c69f256948555`
         );
         const data = await response.json();
-        if (data)
+        if (data) {
+          setItems([data.sys.country, data.name, Math.floor(data.main.temp)]);
           setWeather({
             humidity: data.main.humidity,
             windSpeed: data.wind.speed,
@@ -41,6 +47,7 @@ function App() {
             icon: data.weather[0].icon,
             main: data.weather[0].main,
           });
+        }
         console.log(data);
       } catch (err) {
         console.log("oooooohh no!", err);
@@ -49,8 +56,9 @@ function App() {
     fetchAPI();
   }, [search]);
 
-  console.log(weather);
+  // console.log(weather);
   const { main } = weather;
+  // console.log(items, typeof items);
 
   useEffect(() => {
     const fetchPics = async () => {
@@ -60,7 +68,7 @@ function App() {
         );
         const data = await response.json();
         if (data) {
-          console.log(data.results[1].urls.small, "small");
+          // console.log(data.results[1].urls.small, "small");
           setPictures(data.results[1].urls.small);
         }
       } catch (err) {
@@ -70,7 +78,7 @@ function App() {
     fetchPics();
   }, [main]);
 
-  console.log(pictures);
+  // console.log(pictures);
 
   return (
     <BrowserRouter>
@@ -81,9 +89,11 @@ function App() {
           element={
             <AppLayout
               search={search}
+              handleAdd={handleAdd}
               handleSearch={handleSearch}
               weather={weather}
               pictures={pictures}
+              items={items}
             />
           }
         ></Route>

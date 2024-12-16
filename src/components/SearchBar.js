@@ -1,13 +1,14 @@
 import { StyledSearchBar } from "../styles/CityIcon.styles";
 
-function SearchBar({ handleSearch, handleCreate, handleAdd }) {
+function SearchBar({ handleValue, handleSearch, items, value }) {
   function onInputSearch(event) {
     if (event.key === "Enter") {
-      handleCreate(true);
       handleSearch(event.target.value);
-      handleAdd();
+      // console.log(items, typeof items);
+      handleValue(items);
     }
   }
+
   return (
     <StyledSearchBar>
       <input

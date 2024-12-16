@@ -4,32 +4,27 @@ import CityIcon from "./CityIcon";
 import CurrentLoc from "./CurrentLoc";
 import SearchBar from "./SearchBar";
 
-function SideBar({ weather, handleSearch, search }) {
+function SideBar({ items, weather, handleSearch, search, handleAdd }) {
   const { location, country } = weather;
-  const [create, setCreate] = useState(false);
-  const [items, setItems] = useState([]);
+  const [value, setValue] = useState([]);
 
-  const handleCreate = (value) => {
-    setCreate(value);
-  };
-
-  const handleAdd = () => {
-    if (create) {
-      setItems([...items, <CityIcon weather={weather} />]);
-      console.log(items);
-    }
-  };
+  function handleValue(val) {
+    setValue(val);
+  }
+  // console.log(value, typeof value);
 
   return (
     <StyledSideBar style={{ border: "1px solid purple" }}>
       <CurrentLoc country={country} location={location} />
       <SearchBar
-        handleAdd={handleAdd}
+        items={items}
+        value={value}
         handleSearch={handleSearch}
-        handleCreate={handleCreate}
+        handleValue={handleValue}
       />
-      {create &&
-        items.map((item, index) => <CityIcon weather={weather} key={index} />)}
+      {value.map((item, index) => (
+        <CityIcon items={items} key={index} value={value} />
+      ))}
     </StyledSideBar>
   );
 }
