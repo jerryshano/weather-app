@@ -29,7 +29,8 @@ function App() {
         );
         const data = await response.json();
         if (data) {
-          setItems([data.sys.country, data.name, Math.floor(data.main.temp)]);
+          // setItems([data.sys.country, data.name, Math.floor(data.main.temp)]);
+          handleAdd([data.sys.country, data.name, Math.floor(data.main.temp)]);
           setWeather({
             humidity: data.main.humidity,
             windSpeed: data.wind.speed,
@@ -69,7 +70,7 @@ function App() {
         const data = await response.json();
         if (data) {
           // console.log(data.results[1].urls.small, "small");
-          setPictures(data.results[1].urls.small);
+          setPictures(data.results[2].urls.small);
         }
       } catch (err) {
         console.log("unsplash error jj");
