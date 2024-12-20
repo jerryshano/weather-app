@@ -30,7 +30,7 @@ function App() {
         const data = await response.json();
         if (data) {
           // setItems([data.sys.country, data.name, Math.floor(data.main.temp)]);
-          handleAdd([data.sys.country, data.name, Math.floor(data.main.temp)]);
+          handleAdd([data.sys.country, data.name, Math.floor(data.main.temp),data.id, data.name]);
           setWeather({
             humidity: data.main.humidity,
             windSpeed: data.wind.speed,
@@ -57,9 +57,7 @@ function App() {
     fetchAPI();
   }, [search]);
 
-  // console.log(weather);
   const { main } = weather;
-  // console.log(items, typeof items);
 
   useEffect(() => {
     const fetchPics = async () => {
@@ -69,7 +67,6 @@ function App() {
         );
         const data = await response.json();
         if (data) {
-          // console.log(data.results[1].urls.small, "small");
           setPictures(data.results[2].urls.small);
         }
       } catch (err) {
@@ -78,8 +75,6 @@ function App() {
     };
     fetchPics();
   }, [main]);
-
-  // console.log(pictures);
 
   return (
     <BrowserRouter>
@@ -99,8 +94,8 @@ function App() {
           }
         ></Route>
         <Route
-          path="cityview"
-          element={<CityView weather={weather} />}
+          path="cityview/:name"
+          element={<CityView />}
           weather={weather}
         />
       </Routes>

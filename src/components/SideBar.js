@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyledSideBar } from "../styles/SideBar.styles";
 import CityIcon from "./CityIcon";
 import CurrentLoc from "./CurrentLoc";

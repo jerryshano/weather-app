@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { StyledCityIcon } from "../styles/CityIcon.styles";
 
 function CityIcon({ item }) {
+
   return (
-    <Link to="/cityview" style={{ textDecoration: "none", color: "inherit" }}>
+    <Link to={`cityview/${item[4]}`} style={{ textDecoration: "none", color: "inherit" }}>
       <StyledCityIcon>
         <div>🇮🇨</div>
         <div>
