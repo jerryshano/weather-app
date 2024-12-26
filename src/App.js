@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./pages/AppLayout";
 import GlobalStyles from "./styles/Globalstyles";
 import CityView from "./components/CityView";
+import Header from "./components/Header";
 
 function App() {
   const [weather, setWeather] = useState([]);
@@ -79,6 +80,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <Header />
       <Routes>
         <Route
           index

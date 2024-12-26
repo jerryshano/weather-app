@@ -11,7 +11,7 @@ function AppLayout({
 }) {
   return (
     <>
-      <Header />
+      {/*<Header />*/}
       <Main
         items={items}
         pictures={pictures}
